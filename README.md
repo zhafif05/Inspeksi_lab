@@ -332,5 +332,4 @@ Semua angka di bawah adalah hasil eksekusi nyata, bukan estimasi.
 | Database akhir | `full_setup.sql` di-import ulang; hash password asli terverifikasi; 10 users, 4 labs, 17 items, 19 inspections, 389 results, 62 damage reports |
 
 Detail audit lengkap ada di `AUDIT-MIGRASI.md`. Render browser juga dicek memakai Chrome headless: halaman login/admin dan dashboard `kalab` ter-render dengan benar (DOM memuat `Login Portal`, `Selamat Datang`, dan `Inspeksi Pending`). Perbandingan piksel-per-piksel antar dua stack tidak dilakukan, tetapi source JSX identik dan `globals.css` byte-identik. Fallback `POST /api/inspections/create` tanpa `checklist_results` tetap menghasilkan error 500 `Column 'status' cannot be null` pada MariaDB lokal, sama seperti source Express yang memasukkan `NULL` eksplisit ke kolom `NOT NULL`; jalur normal UI mengirim `checklist_results` dan lolos.
-#   I n s p e k s i _ l a b  
- 
+#
